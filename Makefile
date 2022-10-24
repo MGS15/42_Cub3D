@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
+#    By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 01:34:35 by sel-kham          #+#    #+#              #
-#    Updated: 2022/09/18 03:35:24 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/24 10:53:42 by bbrahim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,12 @@ MLX_EFLAGS := -Lmlx -lmlx -framework OpenGL -framework AppKit
 MLX_OFLAGS := -Imlx
 
 # Directories
-MLX_DIR := mlx
-SRC_DIR := src
+SRC_DIR := mandatory/src_mandatory
 OBJ_DIR := obj
 INC_DIR := includes
 
 # Subdirectories
+MLX_DIR := $(INC_DIR)/mlx
 LIBFT_DIR := $(INC_DIR)/libft
 HEADERS_DIR := $(INC_DIR)/headers
 HELPERS_DIR := $(SRC_DIR)/helpers
