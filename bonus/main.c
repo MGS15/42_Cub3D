@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory_handlers.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 02:07:23 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/23 18:45:39 by bbrahim          ###   ########.fr       */
+/*   Created: 2022/09/18 01:56:59 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/24 18:47:49 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/cub3d.h"
 
-void	*ft_malloc(int size)
+
+int	main(int c, char **v)
 {
-	void	*ptr;
-
-	ptr = malloc(size);
-	if (!ptr)
+	if (c != 2 || !v[1])
 	{
-		printf("malloc failed!!\n");
-		exit(EXIT_FAILURE);
+		printf("\033[0;31mA map in format `*.cub` is required!\033[0;37m\n");
+		return (EXIT_FAILURE);
 	}
-	return (ptr);
 }
