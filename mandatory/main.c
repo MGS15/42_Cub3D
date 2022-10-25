@@ -6,11 +6,13 @@
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 01:56:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/24 08:58:53 by bbrahim          ###   ########.fr       */
+/*   Updated: 2022/10/25 09:59:12 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/headers/cub3d.h"
+#include "headers/cub3d.h"
+#include "headers/types.h"
+#include "headers/macros.h"
 
 int	main(int c, char **v)
 {

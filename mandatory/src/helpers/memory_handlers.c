@@ -6,11 +6,13 @@
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 02:07:23 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/24 18:35:03 by bbrahim          ###   ########.fr       */
+/*   Updated: 2022/10/25 09:59:31 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../../headers/cub3d.h"
+#include "../../headers/types.h"
+#include "../../headers/macros.h"
 
 void	*ft_malloc(int size)
 {

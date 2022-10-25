@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
+#    By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 01:34:35 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/25 02:37:51 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/25 09:54:11 by bbrahim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,52 +20,49 @@ BLUE := \033[0;34m
 REMOVE := rm -rf
 
 # Flags
-CFLAGS := -Wall -Wextra -Werror
-MATH_FLAGS := -lm
-MLX_EFLAGS := -Lmlx -lmlx -framework OpenGL -framework AppKit
-MLX_OFLAGS := -Imlx
+CFLAGS		:= -Wall -Wextra -Werror
+MATH_FLAGS	:= -lm
+MLX_EFLAGS	:= -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_OFLAGS	:= -Imlx
 
 # Parts
-MANDATORY_DIR := mandatory
-BONUS_DIR := bonus
-LIBS_DIR := libs
+MANDATORY_DIR	:= mandatory
+BONUS_DIR		:= bonus
+LIBS_DIR		:= libs
 
 # Directories
-SRC_DIR := src
+SRC_DIR := $(MANDATORY_DIR)/src
 OBJ_DIR := obj
-INC_DIR := includes
 
-# Subdirectories
-MLX_DIR := $(LIBS)/mlx
-LIBFT_DIR := $(LIBS)/libft
-HEADERS_DIR := $(SRC_DIR)/headers
-HELPERS_DIR := $(SRC_DIR)/helpers
+# mandatory_Subdirectories
+LIBFT_DIR	:= $(LIBS_DIR)/libft
+MLX_DIR		:= $(LIBS_DIR)/mlx
+HEADERS_DIR	:= $(MANDATORY_DIR)/headers
+HELPERS_DIR	:= $(SRC_DIR)/helpers
 
-# Includes
-## Headers
+## mandatory_Headers
 HEADERS := cub3d macros types
 HEADERS := $(addprefix $(HEADERS_DIR)/, $(addsuffix .h, $(HEADERS)))
+
 ## Libft
-LIBFT := $(LIBFT_DIR)/libft.a
+LIBFT	:= $(LIBFT_DIR)/libft.a
 ## MLX Lib
-MLX := $(MLX_DIR)/libmlx.a
+MLX		:= $(MLX_DIR)/libmlx.a
 
 # Source files
-MAIN := $(SRC_DIR)/main.c
+MAIN	:= $(MANDATORY_DIR)/main.c
 ## Helpers
-HELPERS := memory_handlers
-HELPERS := $(addprefix $(MANDATORY_DIR)/$(HELPERS_DIR)/, $(addsuffix .c, $(HELPERS)))
+HELPERS	:= memory_handlers
+HELPERS	:= $(addprefix $(MANDATORY_DIR)/$(HELPERS_DIR)/, $(addsuffix .c, $(HELPERS)))
 
 # Compilation reqirements
 SRC := $(HELPERS)
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
 # Base code for the Makefile
-.PHONY: all clean fclean re
+NAME	:= cub3D
 
-NAME := cub3D
-
-BONUS := cub3D_bonus
+BONUS	:= cub3D_bonus
 
 all: $(NAME)
 
@@ -90,3 +87,5 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR)/ fclean
 
 re: fclean all
+
+.PHONY: all clean fclean re

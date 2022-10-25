@@ -6,7 +6,12 @@
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:47:27 by bbrahim           #+#    #+#             */
-/*   Updated: 2022/10/24 18:47:28 by bbrahim          ###   ########.fr       */
+/*   Updated: 2022/10/25 09:58:20 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef TYPES_H
+# define TYPES_H
+
+
+#endif

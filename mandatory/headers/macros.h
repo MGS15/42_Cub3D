@@ -6,7 +6,12 @@
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:47:24 by bbrahim           #+#    #+#             */
-/*   Updated: 2022/10/24 18:47:25 by bbrahim          ###   ########.fr       */
+/*   Updated: 2022/10/25 09:58:53 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MACROS_H
+# define MACROS_H
+
+
+#endif
