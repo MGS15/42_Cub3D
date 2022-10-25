@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+         #
+#    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 01:34:35 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/24 18:58:04 by bbrahim          ###   ########.fr        #
+#    Updated: 2022/10/25 02:37:51 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ MLX := $(MLX_DIR)/libmlx.a
 MAIN := $(SRC_DIR)/main.c
 ## Helpers
 HELPERS := memory_handlers
-HELPERS := $(addprefix $(HELPERS_DIR)/, $(addsuffix .c, $(HELPERS)))
+HELPERS := $(addprefix $(MANDATORY_DIR)/$(HELPERS_DIR)/, $(addsuffix .c, $(HELPERS)))
 
 # Compilation reqirements
 SRC := $(HELPERS)
