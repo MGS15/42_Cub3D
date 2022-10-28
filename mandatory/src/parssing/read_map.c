@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 01:56:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/28 11:57:59 by bbrahim          ###   ########.fr       */
+/*   Created: 2022/10/28 11:59:01 by bbrahim           #+#    #+#             */
+/*   Updated: 2022/10/28 11:59:38 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/cub3d.h"
-#include "headers/types.h"
-#include "headers/macros.h"
-
-void	ft_chk_map_ext(char *av)
-{
-	char	*ext;
-	int		i;
-
-	i = 0;
-	while (av[i] != '\0')
-		i++;
-	ext = ft_strnstr(&av[1], ".cub", i);
-	if (!ext || ft_strncmp(ext, ".cub", 5))
-		printf("\033[0;31mA Invalid extention\033[0;37m\n");
-}
+#include "../headers/cub3d.h"
+#include "../headers/types.h"
+#include "../headers/macros.h"
 
 void	ft_read_map( char *file, t_root *root )
 {
@@ -63,34 +50,4 @@ char	*ft_read_file( int fd )
 	}
 	free (buf);
 	return (res);
-}
-
-int	main( int c, char **av )
-{
-	t_root	root;
-	int		fd;
-	char	*map_file;
-	int		i;
-
-	if (c != 2 || !av[1])
-	{
-		printf("\033[0;31mA map in format `*.cub` is required!\033[0;37m\n");
-		return (EXIT_FAILURE);
-	}
-	ft_chk_map_ext(av[1]);
-	fd = open(av[1], O_RDONLY);
-	if (fd != 3)
-		return (0);
-	map_file = ft_read_file(fd);
-	if (!map_file)
-		return (0);
-	ft_read_map(map_file, &root);
-
-	i = -1;
-	while (root.map.data[++i])
-	{
-		printf("%s\n", root.map.data[i]);
-	}
-	close(fd);
-	return (0);
 }

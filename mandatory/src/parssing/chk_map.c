@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   chk_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 02:00:32 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/28 12:56:03 by bbrahim          ###   ########.fr       */
+/*   Created: 2022/10/28 11:13:37 by bbrahim           #+#    #+#             */
+/*   Updated: 2022/10/28 11:58:19 by bbrahim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../headers/cub3d.h"
+#include "../headers/types.h"
+#include "../headers/macros.h"
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "../../libs/libft/libft.h"
-# include "../../libs/mlx/mlx.h"
+void	ft_chk_map_ext(char *av)
+{
+	char	*ext;
+	int		i;
 
-// parssing:
-void	ft_chk_map_ext(char *av);
-
-void	ft_read_map( char *file, t_root *root );
-char	*ft_read_file( int fd );
-
-#endif
+	i = 0;
+	while (av[i] != '\0')
+		i++;
+	ext = ft_strnstr(&av[1], ".cub", i);
+	if (!ext || ft_strncmp(ext, ".cub", 5))
+		printf("\033[0;31mA Invalid extention\033[0;37m\n");
+}

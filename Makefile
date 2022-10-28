@@ -6,7 +6,7 @@
 #    By: bbrahim <bbrahim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 01:34:35 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/25 09:54:11 by bbrahim          ###   ########.fr        #
+#    Updated: 2022/10/28 11:39:07 by bbrahim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BLUE := \033[0;34m
 REMOVE := rm -rf
 
 # Flags
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror -fsanitize=address -static-libsan
 MATH_FLAGS	:= -lm
 MLX_EFLAGS	:= -Lmlx -lmlx -framework OpenGL -framework AppKit
 MLX_OFLAGS	:= -Imlx
